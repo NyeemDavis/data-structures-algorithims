@@ -15,6 +15,6 @@ function quickSort(arr) {
  return [...quickSort(left), pivot, ...quickSort(right)]
 }
 
-// Time Complexity: Big-O O()
-
+// Worst case:O(n^2)
+// Avg case: O(nlogn)
 console.log(quickSort([-6, 20, 8, -2, 4]))
