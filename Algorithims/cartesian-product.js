@@ -11,6 +11,6 @@ function cartesianProduct(a, b) {
     return AxB
 }
 
-// Time complexity: O(logn)
+// Time complexity: O(mn)
 
 console.log(cartesianProduct([10, 11], [12, 13, 14]))
