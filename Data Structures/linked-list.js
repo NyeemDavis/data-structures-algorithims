@@ -64,5 +64,8 @@ const list = new LinkedList()
 console.log('List is empty?', list.isEmpty())
 console.log('List size:', list.getSize())
 list.prepend(10)
+list.print()
+
 list.prepend(20)
 list.prepend(30)
+list.print()
