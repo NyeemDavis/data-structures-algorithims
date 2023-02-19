@@ -35,6 +35,7 @@ class LinkedList {
     getSize() {
         return this.size
     }
+    // O(1)
     prepend(value) {
         const node = new Node(value)
         if(this.isEmpty()) {
@@ -42,6 +43,20 @@ class LinkedList {
         } else {
             node.next = this.head
             this.head = node
+        }
+        this.size++
+    }
+    // O(n)
+    append(value){
+        const node = new Node(value)
+        if(this.isEmpty) {
+            this.head = node
+        } else {
+            let prev = this.head
+            while(prev.next) {
+                prev = prev.next
+            }
+            prev.next = node
         }
         this.size++
     }
