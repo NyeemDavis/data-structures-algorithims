@@ -49,7 +49,7 @@ class LinkedList {
     // O(n)
     append(value){
         const node = new Node(value)
-        if(this.isEmpty) {
+        if(this.isEmpty()) {
             this.head = node
         } else {
             let prev = this.head
@@ -59,6 +59,23 @@ class LinkedList {
             prev.next = node
         }
         this.size++
+    }
+    insert(value, index) {
+        if(index < 0 || index > this.size) {
+            return 
+        }
+        if(index === 0) {
+            this.prepend(value)
+        } else {
+            const node = new Node(value)
+            let prev = this.head
+            for(i = 0; i < index - 1; i++) {
+                prev = prev.next
+            }
+            node.next = prev.next
+            prev.next = node
+            this.size++
+        }
     }
     print() {
         if(this.isEmpty()) {
@@ -84,4 +101,3 @@ list.print()
 list.prepend(20)
 list.prepend(30)
 list.print()
-// cheese mans
