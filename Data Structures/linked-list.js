@@ -95,6 +95,21 @@ class Node {
      this.size--
      return removedNode
     }
+    search(value) {
+      if(this.isEmpty()) {
+        return -1
+      } else {
+        let curr = this.head
+        let i = 0
+        while(curr) {
+          if(curr.value == value) {
+            return i
+          }
+          curr = curr.next
+          i++
+        }
+      }
+    }
     print() {
       if (this.isEmpty()) {
         console.log('List is empty')
@@ -111,16 +126,4 @@ class Node {
   }
   
   const list = new LinkedList()
-  list.prepend(10)
-  list.prepend(20)
-  list.prepend(30)
-  list.insert(45, 2)
-  
-  list.print()
-  console.log(list.removeFrom(2))
-  console.log(list.getSize())
-  list.print()
-  console.log(list.getSize())
-  console.log(list.removeFrom(2))
-  list.print()
-  console.log(list.getSize())
+ 
